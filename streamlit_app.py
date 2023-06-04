@@ -25,7 +25,7 @@ def get_fruityvice_data(this_fruit_choice):
 
 streamlit.header("Fruityvice Fruit Advice!")
 try:
-  fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+  fruit_choice = streamlit.text_input('What fruit would you like information about?')
   if not fruit_choice:
     streamlit.error("please select a fruit to get information.")
   else:
@@ -33,7 +33,7 @@ try:
 except URLError as e:
   streamlit.error()
 streamlit.write('The user entered ', fruit_choice)
-add_my_fruit = streamlit.text_input('What fruit would you like to add?','Jackfruit')
+add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 streamlit.write('Thanks for adding ', add_my_fruit)
 my_cur.execute("insert into FRUIT_LOAD_LIST values ('from streamlit')")
 
